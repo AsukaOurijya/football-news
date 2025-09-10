@@ -35,7 +35,9 @@ SECRET_KEY = 'django-insecure-pi+(2(m(^()@cvn4i(%!htxm3wpq*pmoa7ow70c+^iv#t$j_lj
 DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "muhammad-azka41-footballnews.pbp.cs.ui.ac.id"]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://muhammad-azka41-footballnews.pbp.cs.ui.ac.id/"
+]
 
 # Application definition
 
@@ -64,7 +66,7 @@ ROOT_URLCONF = 'football_news.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
