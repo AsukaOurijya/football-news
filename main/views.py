@@ -4,6 +4,8 @@ from main.models import News
 from django.http import HttpResponse
 from django.core import serializers
 
+#Views
+
 def show_xml(request):
     news_list = News.objects.all()
     xml_data = serializers.serialize("xml", news_list)
