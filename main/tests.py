@@ -1,5 +1,5 @@
 from django.test import TestCase, Client 
-from .models import News
+from main.models import News
 
 # Create your tests here.
 
