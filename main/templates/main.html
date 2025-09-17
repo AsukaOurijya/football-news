@@ -17,6 +17,20 @@
     </button>
 </a>
 
+<a href="{% url 'main:logout' %}">
+    <button>Logout</button>
+</a>
+
+<a href="?filter=all">
+    <button type="button">All Articles</button>
+</a>
+
+<a href="?filter=my">
+    <button type="button">My Articles</button>
+</a>
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+
 <hr>
 
 {% if not news_list %}
@@ -47,7 +61,13 @@
     <br />
     {% endif %}
 
-    <p>{{news.content|truncatewords:25}}...</p>
+    <p>{{news.content}}</p>
+
+    {% if news.user %}
+        <p>Author: {{ news.user.username }}</p>
+    {% else %}
+        <p>Author: Anonymous</p>
+    {% endif %}
 
     <p>
         <a href="{% url 'main:show_news' news.id%}">
